@@ -1,0 +1,23 @@
+- coi toi: bai  12
+- Module trong java script
+    + khi một script lớn đến 1 mức độ nào đó, chúng ta có thể tổng hợp các chức năng hay dùng thành các Module
+    + là 1 đoạn mã nguồn mà có thể tái sử dụng được
+    + tồn tại độc lập, không làm ảnh hưởng , xung đột  với các đoạn mã nguồng khác
+    + Trong nodejs module là 1 nguyên tắc thỏa thuận để cấu trúc cho các module thỏa mản:
+        * Khi tạo ra module thì dùng: module.exports
+        * khi gọi module thì dùng : require
+        vd: file bar.js
+            module.exports = function(){
+                console.log('bar !')
+            }
+            file app.js
+            var bar = require('./bar.js');
+            bar();
+- First-class function trong javascript:
+    + Ngôn ngữ lập trình được coi là First-class function khi mà function trong ngôn ngữ đó được sử dụng như một object
+    + trong trường hợp này , object chính là function
+    + Javascript là First-class function:
+        * Có thể đóng vai trò là tham số của hàm
+        * Có thể đóng vai trò là giá trị trả về từ 1 hàm
+        * Có thể gán cho 1 biến
+       
