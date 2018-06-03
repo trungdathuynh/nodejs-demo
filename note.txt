@@ -114,3 +114,18 @@
     ///////////////////////////////////////////////////
 - Thực thi hàm ngay khi được khởi tạo
     + scope: là phạm vi mà đoạn mã chương trình có thể truy cập đến biến hoặc function
+    //////////////////////////////////////////////////
+            var firstName = "Linh";
+            (function(lastName) {
+                var firstName = "Khang";
+                console.log(firstName);
+                console.log(lastName);
+            }("Rua")); // thuc thi ngay ham khi duoc khoi ta
+
+            console.log(firstName);
+
+            // chuong trinh in ra 
+            // Khang
+            // Rua
+            // Linh
+    //////////////////////////////////////////////////
