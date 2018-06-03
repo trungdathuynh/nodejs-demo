@@ -1,4 +1,4 @@
-- coi toi: bai  12
+- coi toi: bai  15
 - Module trong java script
     + khi một script lớn đến 1 mức độ nào đó, chúng ta có thể tổng hợp các chức năng hay dùng thành các Module
     + là 1 đoạn mã nguồn mà có thể tái sử dụng được
@@ -20,4 +20,97 @@
         * Có thể đóng vai trò là tham số của hàm
         * Có thể đóng vai trò là giá trị trả về từ 1 hàm
         * Có thể gán cho 1 biến
-       
+- Tạo module
+    + tạo 2 file app.js va hello.js
+    + xây dựng module mới trên file hello.js
+    + từ file app.js muốn sử dụng module trên file hello.js ta code như sau
+        require("./hello.js")
+- object and object literal
+    + object literal: ca1c ca85p name: value như sau
+        {
+            Name: 'dat',
+            Age: 35,
+            Address : {
+                City: 'HCM',
+                Country: 'Viet Nam'
+            }
+            sayHello : function () {
+                console.log("hello, " + this.Name);
+            }
+        }
+- Hàm khởi tạo và kế thừa prototype
+    + Kế thừa prototype: theo nguyên tắc prototype chain
+    + hàm khởi tạo: dùng khởi tạo đối tượng
+                    sử dụng từ khóa `this` để truy cập đến các biến của đối tượng hoặc khởi tạo mới
+
+    ///////////////////////// code demo ////////////////////////////////
+            function Person(name, password) {
+            this.name = name;
+            this.password = password;
+            }
+
+            Person.prototype.getName = function() {
+                return this.name;
+            }
+
+            Person.prototype.getPassword = function() {
+                return this.password;
+            }
+
+            Person.prototype.getLevel = function() {
+                return this.level;
+            }
+
+            Person.prototype.level = "admin";
+
+            function User(name) {
+                this.name = name;
+            }
+
+            User.prototype = new Person();
+
+            var person = new Person("ty", "12345");
+            var user = new User("Teo", "678890");
+
+            console.log(user.getName()); // Teo
+            console.log(user.getLevel()); // admin
+            console.log(user.getPassword()); // undefined
+            console.log(person.getName()); //ty
+
+            // mo rong ham san co
+            Date.prototype.vnFormat = function() {
+                var yyyy = this.getFullYear();
+                var mm = this.getMonth() + 1;
+                var dd = this.getDate();
+                return dd + "/" + mm + "/" + yyyy;
+            }
+            var now = new Date();
+            var xms = new Date(2016, 11, 25);
+            console.log(now.vnFormat()); 
+            console.log(xms.vnFormat()); // 25/12/2016
+    ///////////////////////////////////////////////////////////////////
+- Biến tham trị và biến tham chiếu
+    + Biến tham trị là kiểu dử liệu nguyên thủy : int, string ...
+    + biến tham chiếu: kiểu object
+    VD: 
+    ///////////////////////////////////////////////////
+            function changeByValue(b) {
+            b = 2;
+            }
+            var a = 1;
+            changeByValue(a);
+            console.log(a); // 1
+
+            function changByRef(obj) {
+                obj.prop1 = function() {
+                    // do sth
+                }
+                obj.newProp2 = {};
+            }
+            var c = {};
+            c.prop1 = {};
+            changByRef(c);
+            console.log(c); // { prop1: [Function], newProp2: {} } => c da thay doi
+    ///////////////////////////////////////////////////
+- Thực thi hàm ngay khi được khởi tạo
+    + scope: là phạm vi mà đoạn mã chương trình có thể truy cập đến biến hoặc function
