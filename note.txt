@@ -1,4 +1,4 @@
-- coi toi: bai  15
+- coi toi: bai  18
 - Module trong java script
     + khi một script lớn đến 1 mức độ nào đó, chúng ta có thể tổng hợp các chức năng hay dùng thành các Module
     + là 1 đoạn mã nguồn mà có thể tái sử dụng được
@@ -129,3 +129,8 @@
             // Rua
             // Linh
     //////////////////////////////////////////////////
+- Node js làm gi voi file .js:
+    + nodejs đọc nội dung file và bọc nội dung thông qua wrapper trước khi đưa vào V8 engine -> gọi hàm apply để thực thi đoạn mã
+    -> trả về module đó qua function exports
+     thông qua function `require`
+        
