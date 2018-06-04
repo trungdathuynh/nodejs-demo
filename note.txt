@@ -137,4 +137,6 @@
     + Chuổi json được bọc trong cặp dấu {}
     + các key, value của json bắt buộc đặt trong dấu "dấu nháy kép"
     + các chuổi json được bao bởi [] ([{}{}{}{}])
+    + require("filename.json) => parse nôi dung file json thành object của javascript
+- Các kỷ thuật khai báo và sử dụng module
         

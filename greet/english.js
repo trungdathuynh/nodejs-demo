@@ -1,5 +1,6 @@
+var greeting = require("./greetings.json");
 var english = function() {
-    console.log("Hello");
+    console.log(greeting.en);
 }
 
 module.exports = english;

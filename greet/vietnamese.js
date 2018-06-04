@@ -1,5 +1,6 @@
+var greetings = require("./greetings.json");
 var vietnamese = function() {
-    console.log("Xin chao");
+    console.log(greetings.vi);
 }
 
 module.exports = vietnamese;
