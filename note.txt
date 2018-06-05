@@ -130,7 +130,11 @@
             // Linh
     //////////////////////////////////////////////////
 - Node js làm gi voi file .js:
-    + nodejs đọc nội dung file và bọc nội dung thông qua wrapper trước khi đưa vào V8 engine -> gọi hàm apply để thực thi đoạn mã
+    nodejs đọc nội dung file và bọc nội dung thông qua wrapper trước khi đưa vào V8 engine -> gọi hàm apply để thực thi đoạn mã
     -> trả về module đó qua function exports
-     thông qua function `require`
+    thông qua function `require`
+- JSON:
+    + Chuổi json được bọc trong cặp dấu {}
+    + các key, value của json bắt buộc đặt trong dấu "dấu nháy kép"
+    + các chuổi json được bao bởi [] ([{}{}{}{}])
         

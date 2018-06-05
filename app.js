@@ -1,2 +1,3 @@
-var sayHello = require("./hello");
-sayHello();
+var greet = require("./greet");
+greet.english();
+greet.vietnamese();
