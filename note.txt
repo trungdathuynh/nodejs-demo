@@ -139,4 +139,4 @@
     + các chuổi json được bao bởi [] ([{}{}{}{}])
     + require("filename.json) => parse nôi dung file json thành object của javascript
 - Các kỷ thuật khai báo và sử dụng module
-        
+    + Nodejs cache module qua ham Module._cache thong qua `require("")`
